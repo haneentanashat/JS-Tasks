@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #5</title>
+</head>
+
+<body>
+    <select id="font" onchange="changeFont();">
+        <option value="arial" id="arial">Arial</option>
+        <option value="georgia" id="georgia">Georgia</option>
+        <option value="cursive" id="cursive">Cursive</option>
+    </select>
+
+    <select id="size" onchange="changeSize()" ;>
+        <option value="12px" id="s1">12px</option>
+        <option value="16px" id="s2">16px</option>
+        <option value="20px" id="s3">20px</option>
+    </select>
+
+    <input type="checkbox" id="italic" value="italic" onchange="italic();">
+    <label for="italic">Italic</label>
+    <input type="checkbox" id="bold" value="bold" onchange="bold()">
+    <label for="bold">Bold</label>
+    <input type="checkbox" id="underline" value="underline" onchange="underline()">
+    <label for="underline">Underline</label>
+    <br> <br>
+    <textarea id="text" cols="40" rows="15"></textarea>
+
+    <script>
+
+        let box1 = document.getElementById('italic')
+        let box2 = document.getElementById('bold')
+        let box3 = document.getElementById('underline')
+        let area = document.getElementById('text')
+        function changeFont() {
+            if (document.getElementById('arial').selected) {
+                area.style.fontFamily = 'Arial'
+            }
+            else if (document.getElementById('georgia').selected) {
+                area.style.fontFamily = 'Georgia'
+            }
+            else if (document.getElementById('cursive').selected) {
+                area.style.fontFamily = 'Cursive'
+            }
+        }
+        function changeSize() {
+            if (document.getElementById('s1').selected) {
+                area.style.fontSize = '12px'
+            }
+            else if (document.getElementById('s2').selected) {
+                area.style.fontSize = '16px'
+            }
+            else if (document.getElementById('s3').selected) {
+                area.style.fontSize = '20px'
+            }
+        }
+    
+        function italic() {
+            if (box1.checked == true) {
+                area.style.fontStyle = 'italic'
+            }
+            else {
+                area.style.fontStyle = 'normal'
+            }
+        }
+        function bold() {
+            if (box2.checked == true) {
+                area.style.fontWeight = 'bold'
+            }
+            else {
+                area.style.fontWeight = 'normal'
+            }
+        }
+        function underline() {
+            if (box3.checked == true) {
+                area.style.textDecorationLine = 'underline'
+            }
+            else {
+                area.style.textDecorationLine = 'none'
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

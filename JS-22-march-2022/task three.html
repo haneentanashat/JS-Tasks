@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task three </title>
+</head>
+<body>
+    <select id="items" onchange="flagfun()">
+        <option value="f0" >select</option>
+        <option value="f1" >Jordan</option>
+        <option value="f2" >UK</option>
+        <option value="f3" >Italy</option>
+        <option value="f4" >Chile</option>
+        <option value="f5" >UAE</option>
+    </select><br><br>
+    <img id="flags" src="img/select.png" style="width: 230px; height: 200px;">
+    <script>
+        
+    function flagfun(){
+            let flag=document.getElementById('items').value;
+            if(flag=='f0'){
+                document.getElementById('flags').setAttribute('src','img/select.png')
+                document.getElementById('flags').setAttribute('alt','Select')
+            }
+            else if(flag=='f1'){
+                document.getElementById('flags').setAttribute('src','img/jordan.jpg')
+                document.getElementById('flags').setAttribute('alt','Jordan')
+            }
+            else if(flag=='f2'){
+                document.getElementById('flags').setAttribute('src','img/uk.jpg')
+                document.getElementById('flags').setAttribute('alt','UK')
+            }
+            else if(flag=='f3'){
+                document.getElementById('flags').setAttribute('src','img/italy.jpg')
+                document.getElementById('flags').setAttribute('alt','Italy')
+            }
+            else if(flag=='f4'){
+                document.getElementById('flags').setAttribute('src','img/Chile.png')
+                document.getElementById('flags').setAttribute('alt','Chile')
+            }
+            else if(flag=='f5'){
+                document.getElementById('flags').setAttribute('src','img/uae.png')
+                document.getElementById('f;ags').setAttribute('alt','UAE')
+            }
+        }
+    </script>
+</body>
+</html>

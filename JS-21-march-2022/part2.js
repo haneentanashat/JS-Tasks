@@ -8,11 +8,12 @@ Ex: subtract(2); => 2 - 1 - 0 => 1
 Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
 Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
 */
+document.write("Question #1:"+"<br>");
 
 function subtract(n) {
     let sub = n;
     let i = n - 1;
-    while (i > 0) {
+    while (i >= 0) {
       sub = sub - i;
       i--;
     }
@@ -30,7 +31,28 @@ and return the product of all integers up to n starting from 1
 Ex: factorial(2); => 2 * 1 => 2
 Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
 */
+document.write("Question #2:"+"<br>");
 
+function factorial(n) {
+    let i = n;
+    let fact = 1;
+
+        if (n == 0 || n == 1)
+        {
+        return 1;
+        }
+        else {
+        while (i > 1)
+         {
+          fact = fact * i;
+          i--;
+        }
+      }
+        return fact;
+  }
+  document.write( factorial(2)+ "<br>");
+
+  document.write(  factorial(4)+ "<br>");
 
 /*
 3
@@ -43,7 +65,24 @@ Important: the continue condition should be [somthing !== 0]
 Ex: repeatStr("to",2); => "to to"
 Ex: repeatStr("to",4); => "to to to to"
 */
+document.write("Question #3:"+"<br>");
 
+function repeatStr(string, number) 
+{
+        let i = 0;
+        let strings="  "
+        while(i<number){
+            strings=strings+string
+            if(i!=number-1){
+                strings=strings+" "
+            }
+            i++
+        }
+        return strings
+    }
+  document.write(repeatStr("to", 2)+" <br>");
+
+  document.write(repeatStr("to", 4)+" <br>");
 
 /*
 4
@@ -53,8 +92,20 @@ and will return the sumation from the first number to the second number
 Ex: sum2(4, 5); => 4 + 5 => 9
 Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
 */
-
-
+document.write("Question #4:"+"<br>");
+function sum2(num1, num2) 
+{
+    sumation= 0;
+    let i = num1;
+    while (i <= num2) {
+        sumation = sumation + i;
+        i++;
+      }
+      return sumation;
+    }
+  
+  document.write(sum2(4,5)+"<br>");
+  document.write(sum2(3,6)+"<br>");
 /*
 5
 Create a function called repeatStr2
@@ -122,7 +173,22 @@ countDown(2)
 countDown(7)
 => "7, 6, 5, 4, 3, 2, 1, done"
 */
+document.write("Question #9:"+"<br>");
 
+function countDown(number) {
+    str = " "
+    index = 0;
+    while (number > 0) {
+      str= number;
+      index++;
+      number--;
+    }
+  
+    
+    return str;
+  }
+  
+  document.write(countDown(8)+"<br>");
 /*
 10
 Write a function called multiplication2

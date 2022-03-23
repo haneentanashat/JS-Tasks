@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #5</title>
+</head>
+<body>
+    <label for="psw1">Password (Min 6 characters) : </label>
+    <input type="password" id="psw1" placeholder="Password" onchange="change1(this.value)">
+    <p id="par1" style="color: red; display: inline;"></p>
+    <br /><br />
+    <label for="psw2">Repeat password : </label>
+    <input type="password" id="psw2" placeholder="password" onchange="change2(this.value)">
+    <p id="par2" style="color: red; display: inline;"></p>
+    <br /><br/>
+    <button id="btn" value="Submit" style="display: none;">Submit</button>
+<script>
+    function change1(words) {
+        if (words.length < 6 && words.length > 0){
+            document.getElementById('par1').innerHTML = "Too short"
+        }
+        else{
+            document.getElementById('par1').innerHTML = " "
+        }
+    }
+    function change2(words2) {
+        let val= document.getElementById('psw1').value
+        if (words2 != val || words2.length < 6 && words2.length > 0) {
+            document.getElementById('par2').innerHTML = "The two passwords don't match"
+        }
+        else{
+            document.getElementById('btn').style.display = 'block'
+            document.getElementById('par1').innerHTML = ""
+            document.getElementById('par2').innerHTML = ''
+        }
+    }
+
+</script>
+</body>
+</html>
