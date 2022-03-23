@@ -69,21 +69,21 @@ Sample numbers : -5, -2, -6, 0, -1
 Output : 0 */
 
 /******* Start Your Code *********/
-let lnum1 = window.prompt("Enter a number: ");
-let lnum2 = window.prompt("Enter a number:");
-let lnum3 = window.prompt("Enter a number:");
-let lnum4 = window.prompt("Enter a number:");
-let lnum5 = window.prompt("Enter a number:");
-if (lnum1 > lnum2 || lnum1 > lnum3 || lnum1 > lnum4 || lnum1 > lnum5) {
-    alert("Number" + lnum1 + "is the biggest")
-} else if (lnum2 > lnum1 || lnum2 > lnum3 || lnum2 > lnum4 || lnum2 > lnum5) {
-    alert("Number" + lnum2 + "is the biggest")
-} else if (lnum3 > lnum2 || lnum3 > lnum1 || lnum3 > lnum4 || lnum3 > lnum5) {
-    alert("Number" + lnum3 + "is the biggest")
-} else if (lnum4 > lnum1 || lnum4 > lnum2 || lnum4 > lnum3 || lnum4 > lnum5) {
-    alert("Number" + lnum4 + "is the biggest")
-} else if (lnum5 > lnum1 || lnum5 > lnum2 || lnum5 > lnum4 || lnum5 > lnum3) {
-    alert("Number" + lnum5 + "is the biggest")
+let lnum1 = prompt("Enter a number: ");
+let lnum2 = prompt("Enter a number:");
+let lnum3 = prompt("Enter a number:");
+let lnum4 = prompt("Enter a number:");
+let lnum5 = prompt("Enter a number:");
+if (lnum1 > lnum2 && lnum1 > lnum3 && lnum1 > lnum4 && lnum1 > lnum5) {
+    console.log("Number" +" "+ lnum1 +" "+ "is the biggest")
+} else if (lnum2 > lnum1 && lnum2 > lnum3 && lnum2 > lnum4 && lnum2 > lnum5) {
+    console.log("Number"+" " + lnum2 + " "+"is the biggest")
+} else if (lnum3 > lnum2 && lnum3 > lnum1 && lnum3 > lnum4 && lnum3 > lnum5) {
+    console.log("Number"+ " "+ lnum3 + " "+"is the biggest")
+} else if (lnum4 > lnum1 && lnum4 > lnum2 && lnum4 > lnum3 && lnum4 > lnum5) {
+    console.log("Number"+" " + lnum4 + " "+"is the biggest")
+} else if (lnum5 > lnum1 && lnum5 > lnum2 && lnum5 > lnum4 && lnum5 > lnum3) {
+    console.log("Number"+" " + lnum5 +" "+ "is the biggest")
 }
 /******* End Your Code ********* */
 
