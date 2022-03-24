@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task #6</title>
+</head>
+<body>
+    <input type="text" id="add" placeholder="Song name">
+    <button id="btn" value="Add song" onclick="addSong(value)">Add Song</button>
+    <ul id="playlist" style="list-style: none;"></ul>
+    <script>
+        function addSong(val){
+            var list=document.getElementById('playlist')
+            var li=document.createElement('li')
+            var input=document.getElementById('add').value
+            li.appendChild(document.createTextNode(input))
+            li.style.border='1px soild'
+            li.style.borderRadius='5px'
+            li.style.backgroundColor='lightgrey'
+           
+            li.style.width='400px'
+            list.appendChild(li)
+        }
+    </script>
+</body>
+</html>
