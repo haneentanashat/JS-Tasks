@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #1</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <form>
+
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" name="age">
+        <label for="dob">Enter your Birth Date :</label>
+        <input type="date" id="dob" name="dob"><br>
+        <p id="gen">Gender :</p>
+        <input type="radio" id="male" name="gender" value="0">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="1">
+          <label for="female">Female</label><br><br>
+        <label for="name">Enter your major:</label>
+        <input type="text" id="major" name="major">
+        <label for="uni">Choose university:</label>
+        
+        <select name="uni" id="uni" >
+            <option> select</option>
+            <option value="bau">BAU</option>
+            <option value="just">JUST</option>
+            <option value="hu">HU</option>
+            <option value="uj">UJ</option>
+        </select><br><br>
+        <p>Prefer language:</p>
+        <input type="checkbox" id="c#" name="c#">
+        <label for="c#"> C#</label>
+        <input type="checkbox" id="html" name="html">
+        <label for="html"> HTML</label>
+        <input type="checkbox" id="css" name="css">
+        <label for="css"> CSS</label>
+        <input type="checkbox" id="js" name="js">
+        <label for="js"> Java Script</label> <br><br>
+        <label for="img">Select image:</label>
+        <input type="file" id="img" accept="image/*"><br><br>
+        <label for="brief">Brief Description:</label><br>
+        <input type="text" name="brief" id="brief" /><br> <br>
+        <label for="siblings">Siblings number with a brief description of them:</label><br>
+        <input type="number" name="sibling number" id="siblings">
+        <input type="text" name="sibling desc" id="sib_desc"><br><br>
+
+        <input type="submit" value="Submit" onclick="toSubmit()">
+
+    </form>
+    <div id="div1" >
+    </div>
+
+    <div id="div2">
+    </div>
+
+    <div id="div3">
+    </div>
+
+    <script>
+        function toSubmit() {
+            localStorage.clear()
+            
+            let image= document.getElementById('img').value;
+    localStorage.setItem('img',image);
+    document.getElementById('div1').innerHTML = "your image: "+localStorage.getItem('img');
+
+            localStorage.setItem('name', document.getElementById('name').value)
+            localStorage.setItem('age', document.getElementById('age').value)
+            localStorage.setItem('dob', document.getElementById('dob').value)
+
+            document.getElementById('div1').innerHTML = "Name: " + localStorage.getItem('name');
+            document.getElementById('div1').innerHTML = "Age: " + localStorage.getItem('age');
+            document.getElementById('div1').innerHTML = "Birth date: " + localStorage.getItem('dob');
+            document.getElementById('div1').innerHTML = "Gender: " + localStorage.getItem('gen');
+            let gender0 = document.getElementById('male').checked;
+            localStorage.setItem('male', gender0);
+            let gender1 = document.getElementById('female').checked;
+            localStorage.setItem('female', gender1);
+            if (gender1 == true) {
+                document.getElementById('div1').innerHTML = "female";
+            }
+            else {
+                document.getElementById('div1').innerHTML = "male";
+            }
+            localStorage.setItem('major', document.getElementById('major').value)
+            document.getElementById('div2').innerHTML = "Major: " + localStorage.getItem('major');
+            localStorage.setItem('uni', document.getElementById('uni').value)
+            document.getElementById('div2').innerHTML = "University: " + localStorage.getItem('uni');
+
+            let lang1 = document.getElementById('c#').checked;
+            let lang2 = document.getElementById('html').checked;
+            let lang3 = document.getElementById('css').checked;
+            let lang4 = document.getElementById('js').checked;
+            localStorage.setItem('c#', lang1);
+            if (lang1 == true) 
+            {
+                document.getElementById('div2').innerHTML = 'C#';
+            }
+
+            localStorage.setItem('html', lang2);
+            if (lang2 == true) {
+                document.getElementById('div2').innerHTML = 'HTML';
+            }
+
+
+            localStorage.setItem('css', lang3);
+            if (lang3 == true) {
+                document.getElementById('div2').innerHTML = 'CSS';
+            }
+
+            localStorage.setItem('js', lang4);
+            if (lang4 == true) {
+                document.getElementById('div2').innerHTML = 'Java Script';
+            }
+
+            localStorage.setItem('brief', document.getElementById('brief').value)
+            localStorage.setItem('sibling number', document.getElementById('siblings').value)
+            localStorage.setItem('sibling desc', document.getElementById('sib_desc').value)
+
+            document.getElementById('div3').innerHTML = "Your brief description: " + localStorage.getItem('brief');
+            document.getElementById('div3').innerHTML = "Your sibling number: " + localStorage.getItem('sibling number');
+            document.getElementById('div3').innerHTML = "Your sibling description: " + localStorage.getItem('sib_desc');
+            
+            
+        }
+    </script>
+</body>
+
+</html>

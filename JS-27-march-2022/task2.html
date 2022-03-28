@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #2</title>
+</head>
+<body>
+    <form>
+        <label for="subject">Enter subject :</label>
+        <input type="text" id="sub" name="subject"><br><br>
+        <p>Technology used:</p>
+        <input type="checkbox" id="wire" name="wire">
+        <label for="wire">Miro(Wireframe&mockup)</label>
+        <input type="checkbox" id="html" name="html">
+        <label for="html"> HTML</label>
+        <input type="checkbox" id="css" name="css">
+        <label for="css"> CSS</label>
+        <input type="checkbox" id="js" name="js">
+        <label for="js"> Java Script</label> <br><br>
+        <label for="desc">Description:</label><br>
+        <textarea id="desc" rows="6" cols="55">
+    </textarea><br><br>
+    <label for="User">User Types:</label><br>
+        <textarea id="user" rows="6" cols="55">
+    </textarea><br><br>
+    <label for="img">Select image:</label>
+        <input type="file" id="img" accept="image/*"><br><br>
+        <input type="button" value="Submit" onclick="subject1()" onclick="description1()">
+    </form>
+    <div id="subject"></div>
+    <div id="tech"></div>
+    <div id="description"></div>
+    <div id="user1"></div>
+    <div id="image"></div>
+ <script>
+ function subject1()
+ {   sessionStorage.setItem('subject',document.getElementById('sub').value);
+     document.getElementById('subject').innerHTML=sessionStorage.getItem('subject');
+ }
+ /*function Technology()
+ {
+    sessionStorage.setItem('tech',document.getElementById('sub').value);
+     document.getElementById('subject').innerHTML=sessionStorage.getItem('subject');
+ }*/
+ function description1()
+ {
+    sessionStorage.setItem('description',document.getElementById('desc').value);
+     document.getElementById('description').innerHTML=sessionStorage.getItem('description');
+ }
+
+ </script>
+</body>
+</html>

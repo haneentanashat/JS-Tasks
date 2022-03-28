@@ -1,0 +1,10 @@
+ #div1{
+     display: inline-block;
+     width: 200px;
+     height: 250px;
+    display: none;
+    border: 1px solid;
+    border-radius: 10px;
+     text-align: center; 
+     
+}
