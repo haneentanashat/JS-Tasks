@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task #2</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
     <form>
@@ -23,33 +24,59 @@
         <textarea id="desc" rows="6" cols="55">
     </textarea><br><br>
     <label for="User">User Types:</label><br>
-        <textarea id="user" rows="6" cols="55">
-    </textarea><br><br>
+    <input type="text" id="user" name="user"><br><br>
     <label for="img">Select image:</label>
         <input type="file" id="img" accept="image/*"><br><br>
-        <input type="button" value="Submit" onclick="subject1()" onclick="description1()">
+        <input type="button" value="Submit" onclick="project()">
     </form>
-    <div id="subject"></div>
-    <div id="tech"></div>
-    <div id="description"></div>
-    <div id="user1"></div>
-    <div id="image"></div>
- <script>
- function subject1()
- {   sessionStorage.setItem('subject',document.getElementById('sub').value);
-     document.getElementById('subject').innerHTML=sessionStorage.getItem('subject');
- }
- /*function Technology()
- {
-    sessionStorage.setItem('tech',document.getElementById('sub').value);
-     document.getElementById('subject').innerHTML=sessionStorage.getItem('subject');
- }*/
- function description1()
- {
-    sessionStorage.setItem('description',document.getElementById('desc').value);
-     document.getElementById('description').innerHTML=sessionStorage.getItem('description');
- }
+    <div id="div1"></div>
+    <div id="div2"></div>
+    
+    <script>
+function project() {
+            
+            document.getElementById('div1').style.display = 'inline-block';
+            document.getElementById('div2').style.display = 'inline-block';
+            sessionStorage.setItem('subject', document.getElementById('sub').value)
+            document.getElementById('div1').innerHTML = sessionStorage.getItem('subject')
 
- </script>
+            sessionStorage.setItem('description', document.getElementById('desc').value)
+            document.getElementById('div1').innerHTML =  sessionStorage.getItem('description')
+
+            let tech1 = document.getElementById('wire').checked;
+            let tech2 = document.getElementById('html').checked;
+            let tech3 = document.getElementById('css').checked;
+            let tech4 = document.getElementById('js').checked;
+            sessionStorage.setItem('wire', tech1);
+            if (tech1 == true) {
+                document.getElementById('div1').innerHTML = 'Miro(Wireframe&mockup)';
+            }
+
+            sessionStorage.setItem('html', tech2);
+            if (tech2 == true) {
+                document.getElementById('div1').innerHTML = 'HTML';
+            }
+
+
+            sessionStorage.setItem('css', tech3);
+            if (tech3 == true) {
+                document.getElementById('div21').innerHTML = 'CSS';
+            }
+
+            sessionStorage.setItem('js', tech4);
+            if (tech4 == true) {
+                document.getElementById('div1').innerHTML = 'Java Script';
+            }
+
+            sessionStorage.setItem('User Types', document.getElementById('user').value)
+            document.getElementById('div2').innerHTML = sessionStorage.getItem('user')
+            let image = document.getElementById('img').value;
+            sessionStorage.setItem('img', image);
+            document.getElementById('div2').innerHTML =  sessionStorage.getItem('img');
+        }
+    </script>
+
+
+ 
 </body>
 </html>
